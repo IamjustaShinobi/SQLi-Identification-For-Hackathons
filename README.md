@@ -1,42 +1,45 @@
-   # 🔍 SQLi Identification for Hackathons
+<div align="center">
 
-> **A practical SQL Injection field guide for CTFs & authorized labs.**  
-> Learn to **identify → confirm → fingerprint → exploit → enumerate** SQLi under time pressure.
+# 🔎 SQLi Identification for Hackathons
 
-## 👤 Author
+### **Find it. Understand it. Exploit it.**
 
-**IamjustaShinobi**  
-🐙 **GitHub:** [github.com/IamjustaShinobi](https://github.com/IamjustaShinobi)
+**A practical SQL Injection field guide for CTFs, hackathons, and authorized labs.**
 
-A practical, beginner-friendly cheat sheet for **spotting, confirming, fingerprinting, and exploiting SQL Injection** during CTFs and hackathons.
+`IDENTIFY` → `CONFIRM` → `FINGERPRINT` → `EXPLOIT` → `ENUMERATE`
 
-Built from a real solved challenge and generalized into a repeatable methodology, this guide is designed to take you from **“What even is SQLi?”** to **“I can identify and exploit it under time pressure.”**
+<br>
 
-> ⚠️ This repo is a study/reference guide, not an attack tool. Use it only on systems you're authorized to test — CTF boxes, your own labs, or platforms like PortSwigger, TryHackMe, and HackTheBox.
+[![GitHub](https://img.shields.io/badge/GitHub-IamjustaShinobi-181717?style=for-the-badge&logo=github)](https://github.com/IamjustaShinobi)
+[![Focus](https://img.shields.io/badge/Focus-SQL%20Injection-blue?style=for-the-badge)](#)
+[![Use](https://img.shields.io/badge/Use-CTFs%20%26%20Authorized%20Labs-green?style=for-the-badge)](#)
+
+<br>
+
+> **Stop memorizing random payloads.**
+> <br>
+> **Learn how to recognize the SQL context and choose the technique that actually fits.**
+
+<br>
+
+**Created by [IamjustaShinobi](https://github.com/IamjustaShinobi)**
+
+</div>
 
 ---
 
----
+## ⚡ What This Guide Gives You
 
-## 📚 Table of Contents
-
-| # | Section |
+| 🧭 | What you'll learn |
 |---|---|
-| 01 | [🎯 Why SQLi Still Matters in CTFs](#-why-sqli-still-matters-in-ctfs) |
-| 02 | [✅ Quick Identification Checklist](#-quick-identification-checklist) |
-| 03 | [🕵️ Fingerprinting the Database](#-fingerprinting-the-database) |
-| 04 | [🧠 Understanding Query Context](#-understanding-query-context) |
-| 05 | [🧾 Payload Cheat Sheet by Context](#-payload-cheat-sheet-by-context) |
-| 06 | [🧬 The 4 Classes of SQLi](#-the-4-classes-of-sqli) |
-| 07 | [🗂️ Enumeration Once You Have Injection](#-enumeration-once-you-have-injection) |
-| 08 | [🧩 Worked Example: INSERT-context Injection](#-worked-example-insert-context-injection) |
-| 09 | [🚧 Common Filters and How They're Bypassed](#-common-filters-and-how-theyre-bypassed) |
-| 10 | [🛡️ Defensive Reference](#-defensive-reference-how-its-fixed) |
-| 11 | [📈 Practice Roadmap](#-practice-roadmap) |
-| 12 | [📚 Resources](#-resources) |
+| 🔎 | How to quickly spot SQL Injection |
+| 🧠 | How to identify the query context |
+| 🕵️ | How to fingerprint the database |
+| 🧪 | Which technique fits each SQLi type |
+| 🗂️ | How to enumerate data after confirmation |
+| 🛡️ | How vulnerable queries are properly fixed |
 
-
----
+> ⚠️ **Authorized use only.** This is a study/reference guide for CTF boxes, your own labs, and legal training platforms such as PortSwigger, TryHackMe, and HackTheBox.
 
 ---
 
