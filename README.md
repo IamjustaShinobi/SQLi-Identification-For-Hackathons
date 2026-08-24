@@ -11,8 +11,8 @@
 <br>
 
 [![GitHub](https://img.shields.io/badge/GitHub-IamjustaShinobi-181717?style=for-the-badge&logo=github)](https://github.com/IamjustaShinobi)
-[![Focus](https://img.shields.io/badge/Focus-SQL%20Injection-blue?style=for-the-badge)](#)
-[![Use](https://img.shields.io/badge/Use-CTFs%20%26%20Authorized%20Labs-green?style=for-the-badge)](#)
+[![Focus](https://img.shields.io/badge/Focus-SQL%20Injection-blue?style=for-the-badge)](https://google.com)
+[![Use](https://img.shields.io/badge/Use-CTFs%20%26%20Authorized%20Labs-green?style=for-the-badge)](https://google.com)
 
 <br>
 
@@ -28,22 +28,30 @@
 
 ---
 
+<div align="center">
+
 ## ⚡ What This Guide Gives You
+
+</div>
 
 | 🧭 | What you'll learn |
 |---|---|
-| 🔎 | How to quickly spot SQL Injection |
-| 🧠 | How to identify the query context |
-| 🕵️ | How to fingerprint the database |
-| 🧪 | Which technique fits each SQLi type |
-| 🗂️ | How to enumerate data after confirmation |
-| 🛡️ | How vulnerable queries are properly fixed |
+| 🔎 | [How to quickly spot SQL Injection](#-quick-identification-checklist) |
+| 🧠 | [How to identify the query context](#-understanding-query-context) |
+| 🕵️ | [How to fingerprint the database](#-fingerprinting-the-database) |
+| 🧪 | [Which technique fits each SQLi type](#-payload-cheat-sheet-by-context) |
+| 🗂️ | [How to enumerate data after confirmation](#-enumeration-once-you-have-injection) |
+| 🛡️ | [How vulnerable queries are properly fixed](#-defensive-reference-how-its-fixed) |
 
 > ⚠️ **Authorized use only.** This is a study/reference guide for CTF boxes, your own labs, and legal training platforms such as PortSwigger, TryHackMe, and HackTheBox.
 
 ---
 
+<div align="center">
+
 ## 🎯 Why SQLi Still Matters in CTFs
+
+</div>
 
 Even though frameworks and ORMs make parameterized queries the default nowadays, SQLi keeps showing up in CTFs and hackathons because:
 
@@ -54,9 +62,12 @@ Even though frameworks and ORMs make parameterized queries the default nowadays,
 
 ---
 
----
+
+<div align="center">
 
 ## ✅ Quick Identification Checklist
+
+</div>
 
 Run through this on every new target, in order:
 
@@ -98,9 +109,12 @@ Run through this on every new target, in order:
 
 ---
 
----
+
+<div align="center">
 
 ## 🕵️ Fingerprinting the Database
+
+</div>
 
 Knowing the exact DBMS before you write payloads saves huge amounts of time — concatenation, comments, and metadata tables all differ.
 
@@ -147,9 +161,12 @@ SELECT table_name FROM all_tables;                   -- Oracle-specific equivale
 
 ---
 
----
+
+<div align="center">
 
 ## 🧠 Understanding Query Context
+
+</div>
 
 The single biggest beginner mistake is throwing UNION payloads at everything. **UNION only works inside a `SELECT`.** If your input lands inside `INSERT`, `UPDATE`, or `ORDER BY`, UNION is grammatically invalid there and will always throw a syntax error — no amount of payload tweaking fixes that, because the problem is the clause, not the payload.
 
@@ -166,9 +183,12 @@ If you get a syntax error on UNION, don't assume the app isn't vulnerable — ch
 
 ---
 
----
+
+<div align="center">
 
 ## 🧾 Payload Cheat Sheet by Context
+
+</div>
 
 **Inside a `SELECT` (UNION-based):**
 ```sql
@@ -232,9 +252,12 @@ admin'--                 -- comment out the password check entirely
 
 ---
 
----
+
+<div align="center">
 
 ## 🧬 The 4 Classes of SQLi
+
+</div>
 
 ```
                      ┌────────────────────────┐
@@ -257,9 +280,12 @@ admin'--                 -- comment out the password check entirely
 
 ---
 
----
+
+<div align="center">
 
 ## 🗂️ Enumeration Once You Have Injection
+
+</div>
 
 Confirming injection is only step one — in a CTF you still need to find the flag. Standard enumeration order:
 
@@ -287,9 +313,12 @@ Confirming injection is only step one — in a CTF you still need to find the fl
 
 ---
 
----
+
+<div align="center">
 
 ## 🧩 Worked Example: INSERT-context Injection
+
+</div>
 
 A real case where **UNION failed but concatenation worked** — useful for pattern-matching future challenges.
 
@@ -323,9 +352,12 @@ The leading `'` in the payload closes the developer's string early. From there, 
 
 ---
 
----
+
+<div align="center">
 
 ## 🚧 Common Filters and How They're Bypassed
+
+</div>
 
 CTF apps often add naive filtering instead of fixing the root cause. These are worth trying when your straightforward payload gets blocked (again — authorized targets only):
 
@@ -343,9 +375,12 @@ If you're unsure whether a filter is doing simple string matching or something s
 
 ---
 
----
+
+<div align="center">
 
 ## 🛡️ Defensive Reference (how it's fixed)
+
+</div>
 
 ```js
 // ❌ Vulnerable — string interpolation
@@ -359,9 +394,12 @@ Parameterized queries send the SQL **structure** and the **data** to the databas
 
 ---
 
----
+
+<div align="center">
 
 ## 📈 Practice Roadmap
+
+</div>
 
 1. **PortSwigger Web Security Academy** (free) — UNION attacks → Blind SQLi → SQLi in different contexts.
 2. **picoCTF** — beginner-friendly web exploitation archive.
@@ -372,9 +410,12 @@ Parameterized queries send the SQL **structure** and the **data** to the databas
 
 ---
 
----
+
+<div align="center">
 
 ## 📚 Resources
+
+</div>
 
 - [PortSwigger Web Security Academy — SQL Injection](https://portswigger.net/web-security/sql-injection)
 - [OWASP SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
@@ -384,9 +425,12 @@ Parameterized queries send the SQL **structure** and the **data** to the databas
 
 ---
 
----
+
+<div align="center">
 
 ## ⭐ Final Takeaway
+
+</div>
 
 > **Don't memorize payloads. Understand the query context.**
 
